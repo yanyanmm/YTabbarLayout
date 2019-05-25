@@ -2,7 +2,15 @@
 底部菜单导航
 
 
+![Alt text](https://github.com/yanyanmm/YTabbarLayout/blob/master/shot/tabbar_shot1.png)
+![Alt text](https://github.com/yanyanmm/YTabbarLayout/blob/master/shot/tabbar_shot2.png)
+![Alt text](https://github.com/yanyanmm/YTabbarLayout/blob/master/shot/tabbar_shot3.png)
+
+
+
+```Java
 implementation 'com.github.yanyanmm:YTabbarLayout:v1.0.1'
+```
 
 ```Java
 YTabbarLayout tabbarLayout = findViewById(R.id.tabbarLayout);
