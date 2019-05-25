@@ -81,6 +81,10 @@ public class YTabbarLayout extends LinearLayout {
                 mTabbarItemAttr.setImageWidth(typedArray.getDimensionPixelSize(attr, mTabbarItemAttr.getImageWidth()));
             } else if (attr == R.styleable.YTabbarLayout_tabbar_imageHeight) {
                 mTabbarItemAttr.setImageHeight(typedArray.getDimensionPixelSize(attr, mTabbarItemAttr.getImageHeight()));
+            } else if (attr == R.styleable.YTabbarLayout_tabbar_center_imageWidth) {
+                mTabbarItemAttr.setCenterImageWidth(typedArray.getDimensionPixelSize(attr, mTabbarItemAttr.getCenterImageWidth()));
+            } else if (attr == R.styleable.YTabbarLayout_tabbar_center_imageHeight) {
+                mTabbarItemAttr.setCenterImageHeight(typedArray.getDimensionPixelSize(attr, mTabbarItemAttr.getCenterImageHeight()));
             } else if (attr == R.styleable.YTabbarLayout_tabbar_currentIndex) {
                 mTabbarCurrentIndex = typedArray.getInteger(attr, mTabbarCurrentIndex);
             } else if (attr == R.styleable.YTabbarLayout_tabbar_selected_style) {

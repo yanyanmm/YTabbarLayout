@@ -29,6 +29,14 @@ public class YTabbarItem {
         this.center = true;
     }
 
+    public static YTabbarItem createItem(int imageResId, int textResId, Fragment fragment) {
+        return new YTabbarItem(imageResId, 0, textResId, null, fragment);
+    }
+
+    public static YTabbarItem createItem(int imageResId, String text, Fragment fragment) {
+        return new YTabbarItem(imageResId, 0, 0, text, fragment);
+    }
+
     public static YTabbarItem createItem(int imageResId, int imageSelectedResId, int textResId, Fragment fragment) {
         return new YTabbarItem(imageResId, imageSelectedResId, textResId, null, fragment);
     }

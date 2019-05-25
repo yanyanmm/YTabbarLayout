@@ -10,6 +10,8 @@
         <attr format="dimension" name="tabbar_textMarginTop"/>
         <attr format="dimension" name="tabbar_imageWidth"/>
         <attr format="dimension" name="tabbar_imageHeight"/>
+        <attr format="dimension" name="tabbar_center_imageWidth"/>
+        <attr format="dimension" name="tabbar_center_imageHeight"/>
         <attr format="integer" name="tabbar_currentIndex"/>
         <attr name="tabbar_selected_style">
             <flag name="background" value="0"/>

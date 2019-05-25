@@ -9,7 +9,10 @@ import android.widget.Toast;
 
 import com.lihg.library.tabbarlayout.YTabbarItem;
 import com.lihg.library.tabbarlayout.YTabbarLayout;
+import com.lihg.tabbarlayout.fragment.CircleFragment;
 import com.lihg.tabbarlayout.fragment.HomeFragment;
+import com.lihg.tabbarlayout.fragment.MsgFragment;
+import com.lihg.tabbarlayout.fragment.MyFragment;
 import com.ycl.tabview.library.TabView;
 
 import java.util.ArrayList;
@@ -29,11 +32,16 @@ public class MainActivity extends AppCompatActivity {
         //TabbarLayout
         YTabbarLayout tabbarLayout = findViewById(R.id.tabbarLayout);
         List<YTabbarItem> tabbarItems = new ArrayList<YTabbarItem>();
-        tabbarItems.add(YTabbarItem.createItem(R.mipmap.menu_home, R.mipmap.menu_home_selected, "首页",new HomeFragment()));
-        tabbarItems.add(YTabbarItem.createItem(R.mipmap.menu_circle, R.mipmap.menu_circle_selected, "班级圈",null));
-        tabbarItems.add(YTabbarItem.createCenterItem(R.mipmap.ic_launcher));
-        tabbarItems.add(YTabbarItem.createItem(R.mipmap.menu_msg, R.mipmap.menu_msg_selected, "消息",null));
-        tabbarItems.add(YTabbarItem.createItem(R.mipmap.menu_my, R.mipmap.menu_my_selected, "我的",null));
+        tabbarItems.add(YTabbarItem.createItem(R.mipmap.menu_home, R.mipmap.menu_home_selected, "首页", new HomeFragment()));
+        tabbarItems.add(YTabbarItem.createItem(R.mipmap.menu_circle, R.mipmap.menu_circle_selected, "班级圈",new CircleFragment()));
+        tabbarItems.add(YTabbarItem.createCenterItem(R.mipmap.menu_center));
+        tabbarItems.add(YTabbarItem.createItem(R.mipmap.menu_msg, R.mipmap.menu_msg_selected, "消息",new MsgFragment()));
+        tabbarItems.add(YTabbarItem.createItem(R.mipmap.menu_my, R.mipmap.menu_my_selected, "我的",new MyFragment()));
+        //tabbarItems.add(YTabbarItem.createItem(R.mipmap.menu_home_selected, "首页", new HomeFragment()));
+        //tabbarItems.add(YTabbarItem.createItem(R.mipmap.menu_circle_selected, "班级圈",new CircleFragment()));
+        //tabbarItems.add(YTabbarItem.createCenterItem(R.mipmap.menu_center));
+        //tabbarItems.add(YTabbarItem.createItem(R.mipmap.menu_msg_selected, "消息",new MsgFragment()));
+        //tabbarItems.add(YTabbarItem.createItem(R.mipmap.menu_my_selected, "我的",new MyFragment()));
         tabbarLayout.setTabbarItems(tabbarItems, getSupportFragmentManager());
         tabbarLayout.setOnTabbarItemClickListener(new YTabbarLayout.OnTabbarItemClickListener() {
             @Override

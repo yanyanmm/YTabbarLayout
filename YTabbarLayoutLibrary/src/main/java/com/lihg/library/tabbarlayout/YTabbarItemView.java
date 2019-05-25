@@ -35,9 +35,14 @@ public class YTabbarItemView extends LinearLayout {
     public void setTabbarItem(YTabbarItem tabbarItem, YTabbarItemAttr tabbarItemAttr) {
         mTabbarItem = tabbarItem;
         mTabbarItemAttr = tabbarItemAttr;
+
         mImageView.setImageResource(tabbarItem.getImageResId());
-        mTextView.setVisibility(mTabbarItem.center() ? View.GONE : VISIBLE);
-        if (!mTabbarItem.center()) {
+        if (mTabbarItem.center()) {
+            mImageView.setLayoutParams(new LayoutParams(mTabbarItemAttr.getCenterImageWidth(), mTabbarItemAttr.getCenterImageHeight()));
+            mTextView.setVisibility(View.GONE);
+        } else {
+            mImageView.setLayoutParams(new LayoutParams(mTabbarItemAttr.getImageWidth(), mTabbarItemAttr.getImageHeight()));
+            mTextView.setVisibility(View.VISIBLE);
             LayoutParams params = new LayoutParams(-2, -2);
             params.topMargin = mTabbarItemAttr.getTextMarginTop();
             mTextView.setLayoutParams(params);

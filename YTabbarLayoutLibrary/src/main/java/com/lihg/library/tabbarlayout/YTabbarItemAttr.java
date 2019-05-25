@@ -12,6 +12,8 @@ public class YTabbarItemAttr {
     private int selectedTextColor;
     private int imageWidth;
     private int imageHeight;
+    private int centerImageWidth;
+    private int centerImageHeight;
 
     public YTabbarItemAttr() {
         this.selectedStyle = 1;
@@ -22,6 +24,8 @@ public class YTabbarItemAttr {
         this.selectedTextColor = Color.RED;
         this.imageWidth = -2;
         this.imageHeight = -2;
+        this.centerImageWidth = -2;
+        this.centerImageHeight = -2;
     }
 
     public int getSelectedStyle() {
@@ -86,5 +90,21 @@ public class YTabbarItemAttr {
 
     public void setImageHeight(int imageHeight) {
         this.imageHeight = imageHeight;
+    }
+
+    public int getCenterImageWidth() {
+        return centerImageWidth;
+    }
+
+    public void setCenterImageWidth(int centerImageWidth) {
+        this.centerImageWidth = centerImageWidth;
+    }
+
+    public int getCenterImageHeight() {
+        return centerImageHeight;
+    }
+
+    public void setCenterImageHeight(int centerImageHeight) {
+        this.centerImageHeight = centerImageHeight;
     }
 }
