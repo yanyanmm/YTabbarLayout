@@ -1,22 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <declare-styleable name="TabView">
-        <attr format="reference|color" name="tab_textViewSelColor"/>
-        <attr format="reference|color" name="tab_textViewUnSelColor"/>
-        <attr format="reference|color" name="tab_tabViewBackgroundColor"/>
-        <attr format="dimension" name="tab_tabViewHeight"/>
-        <attr format="dimension" name="imageViewTextViewMargin"/>
-        <attr format="dimension" name="tab_textViewSize"/>
-        <attr format="dimension" name="tab_imageViewWidth"/>
-        <attr format="dimension" name="tab_imageViewHeight"/>
-        <attr name="tab_tabViewGravity">
-            <flag name="top" value="0x30"/>
-            <flag name="bottom" value="0x50"/>
-            <flag name="left" value="0x03"/>
-            <flag name="right" value="0x05"/>
+    <declare-styleable name="YTabbarLayout">
+        <attr format="reference|color" name="tabbar_backgroundColor"/>
+        <attr format="reference|color" name="tabbar_selected_backgroundColor"/>
+        <attr format="reference|color" name="tabbar_textColor"/>
+        <attr format="reference|color" name="tabbar_selected_textColor"/>
+        <attr format="dimension" name="tabbar_height"/>
+        <attr format="dimension" name="tabbar_textSize"/>
+        <attr format="dimension" name="tabbar_textMarginTop"/>
+        <attr format="dimension" name="tabbar_imageWidth"/>
+        <attr format="dimension" name="tabbar_imageHeight"/>
+        <attr format="integer" name="tabbar_currentIndex"/>
+        <attr name="tabbar_selected_style">
+            <flag name="background" value="0"/>
+            <flag name="image_text" value="1"/>
         </attr>
-        <attr format="integer" name="tab_tabViewDefaultPosition"/>
     </declare-styleable>
-    <item name="tabview_fragment_container" type="id"/>
-    <item name="tabview_id" type="id"/>
+    <item name="tabbar_fragment_container" type="id"/>
 </resources>

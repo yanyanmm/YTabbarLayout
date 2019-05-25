@@ -9,6 +9,7 @@ public class YTabbarItem {
     private int textResId;
     private String text;
     private Fragment fragment;
+    private boolean center;
 
     private YTabbarItem(int imageResId, int imageSelectedResId, int textResId, String text, Fragment fragment) {
         this.imageResId = imageResId;
@@ -16,18 +17,28 @@ public class YTabbarItem {
         this.textResId = textResId;
         this.text = text;
         this.fragment = fragment;
+        this.center = false;
+    }
+
+    private YTabbarItem(int imageResId) {
+        this.imageResId = imageResId;
+        this.imageSelectedResId = 0;
+        this.textResId = 0;
+        this.text = null;
+        this.fragment = null;
+        this.center = true;
     }
 
     public static YTabbarItem createItem(int imageResId, int imageSelectedResId, int textResId, Fragment fragment) {
         return new YTabbarItem(imageResId, imageSelectedResId, textResId, null, fragment);
     }
 
-    public static YTabbarItem createItem(int imageResId, int imageSelectedResId, String text,  Fragment fragment) {
+    public static YTabbarItem createItem(int imageResId, int imageSelectedResId, String text, Fragment fragment) {
         return new YTabbarItem(imageResId, imageSelectedResId, 0, text, fragment);
     }
 
     public static YTabbarItem createCenterItem(int imageResId) {
-        return new YTabbarItem(imageResId, 0, 0, null, null);
+        return new YTabbarItem(imageResId);
     }
 
     public int getImageResId() {
@@ -48,5 +59,9 @@ public class YTabbarItem {
 
     public Fragment getFragment() {
         return fragment;
+    }
+
+    public boolean center() {
+        return center;
     }
 }

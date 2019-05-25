@@ -9,5 +9,8 @@
     <com.lihg.library.tabbarlayout.YTabbarLayout
         android:id="@+id/tabbarLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        app:tabbar_textColor="#333333"
+        app:tabbar_selected_textColor="#26CA81"
+        app:tabbar_selected_style="image_text"/>
 </android.support.constraint.ConstraintLayout>
