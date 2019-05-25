@@ -36,7 +36,7 @@ tabbarItems.add(YTabbarItem.createItem(R.mipmap.menu_msg, R.mipmap.menu_msg_sele
 tabbarItems.add(YTabbarItem.createItem(R.mipmap.menu_my, R.mipmap.menu_my_selected, "我的",new MyFragment()));
 tabbarLayout.setTabbarItems(tabbarItems, getSupportFragmentManager());  
 ```
-# 5 YTabbarLayout属性自定义设置:
+# 5. YTabbarLayout属性自定义设置:
 ```xml 
 <declare-styleable name="YTabbarLayout">
     <attr format="reference|color" name="tabbar_backgroundColor"/>
