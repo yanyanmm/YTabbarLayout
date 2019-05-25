@@ -16,7 +16,7 @@ allprojects {
 ```
 # 2. 在build.gradle添加依赖
 ```Java
-implementation 'com.github.yanyanmm:YTabbarLayout:v1.0.1'
+implementation 'com.github.yanyanmm:YTabbarLayout:v1.0.2'
 ```
 # 3. 在xml中,加入以下代码:
 ```xml
