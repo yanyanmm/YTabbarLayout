@@ -18,26 +18,21 @@ allprojects {
 ```Java
 implementation 'com.github.yanyanmm:YTabbarLayout:v1.0.1'
 ```
-
+# 3. 在xml中,加入以下代码:
+```xml
+  <com.lihg.library.tabbarlayout.YTabbarLayout
+        android:id="@+id/tabbarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+```
+# 4. 在代码中添加如下代码:
 ```Java
 YTabbarLayout tabbarLayout = findViewById(R.id.tabbarLayout);
-        List<YTabbarItem> tabbarItems = new ArrayList<YTabbarItem>();
-        tabbarItems.add(YTabbarItem.createItem(R.mipmap.menu_home, R.mipmap.menu_home_selected, "首页",new HomeFragment()));
-        tabbarItems.add(YTabbarItem.createItem(R.mipmap.menu_circle, R.mipmap.menu_circle_selected, "班级圈",null));
-        tabbarItems.add(YTabbarItem.createCenterItem(R.mipmap.ic_launcher));
-        tabbarItems.add(YTabbarItem.createItem(R.mipmap.menu_msg, R.mipmap.menu_msg_selected, "消息",null));
-        tabbarItems.add(YTabbarItem.createItem(R.mipmap.menu_my, R.mipmap.menu_my_selected, "我的",null));
-        tabbarLayout.setTabbarItems(tabbarItems, getSupportFragmentManager());
-        tabbarLayout.setOnTabbarItemClickListener(new YTabbarLayout.OnTabbarItemClickListener() {
-            @Override
-            public void onClickItem(View v) {
-
-            }
-
-            @Override
-            public void onClickCenterItem(View v) {
-                Toast.makeText(getApplicationContext(), "点击中心按钮", Toast.LENGTH_LONG).show();
-            }
-        });
-        
+List<YTabbarItem> tabbarItems = new ArrayList<YTabbarItem>();
+tabbarItems.add(YTabbarItem.createItem(R.mipmap.menu_home, R.mipmap.menu_home_selected, "首页",new HomeFragment()));
+tabbarItems.add(YTabbarItem.createItem(R.mipmap.menu_circle, R.mipmap.menu_circle_selected, "班级圈",new CircleFragment()));
+tabbarItems.add(YTabbarItem.createCenterItem(R.mipmap.menu_center));
+tabbarItems.add(YTabbarItem.createItem(R.mipmap.menu_msg, R.mipmap.menu_msg_selected, "消息",new MsgFragment()));
+tabbarItems.add(YTabbarItem.createItem(R.mipmap.menu_my, R.mipmap.menu_my_selected, "我的",new MyFragment()));
+tabbarLayout.setTabbarItems(tabbarItems, getSupportFragmentManager());  
 ```
