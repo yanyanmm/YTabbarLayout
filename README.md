@@ -6,8 +6,15 @@
 ![Alt text](https://github.com/yanyanmm/YTabbarLayout/blob/master/shot/tabbar_shot2.png)
 ![Alt text](https://github.com/yanyanmm/YTabbarLayout/blob/master/shot/tabbar_shot3.png)
 
-
-
+# 1. 在project的build.gradle添加如下代码(如下图)
+```Java
+allprojects {
+    repositories {
+        maven { url "https://jitpack.io" }
+    }
+}
+```
+# 2. 在build.gradle添加依赖
 ```Java
 implementation 'com.github.yanyanmm:YTabbarLayout:v1.0.1'
 ```
