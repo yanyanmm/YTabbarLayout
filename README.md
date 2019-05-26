@@ -5,6 +5,7 @@
 ![Alt text](https://github.com/yanyanmm/YTabbarLayout/blob/master/shot/tabbar_shot1.png)
 ![Alt text](https://github.com/yanyanmm/YTabbarLayout/blob/master/shot/tabbar_shot2.png)
 ![Alt text](https://github.com/yanyanmm/YTabbarLayout/blob/master/shot/tabbar_shot3.png)
+![Alt text](https://github.com/yanyanmm/YTabbarLayout/blob/master/shot/tabbar_shot4.png)
 
 # 1. 在project的build.gradle添加如下代码(如下图)
 ```Java
