@@ -37,7 +37,7 @@ tabbarItems.add(YTabbarItem.createItem(R.mipmap.menu_msg, R.mipmap.menu_msg_sele
 tabbarItems.add(YTabbarItem.createItem(R.mipmap.menu_my, R.mipmap.menu_my_selected, "我的",new MyFragment()));
 tabbarLayout.setTabbarItems(tabbarItems, getSupportFragmentManager());  
 ```
-# 5. YTabbarLayout属性自定义设置:
+# 5. 自定义属性设置:
 ```xml 
 <declare-styleable name="YTabbarLayout">
     <attr format="reference|color" name="tabbar_backgroundColor"/>
@@ -58,3 +58,20 @@ tabbarLayout.setTabbarItems(tabbarItems, getSupportFragmentManager());
     </attr>
 </declare-styleable>
 ``` 
+# 6. BadgeView设置:
+```Java
+YBadgeView badgeView0 = new YBadgeView(this);
+badgeView0.setTargetView(tabbarLayout.getTabbarItemViews().get(0).getImageView());
+
+YBadgeView badgeView1 = new YBadgeView(this);
+badgeView1.setTargetView(tabbarLayout.getTabbarItemViews().get(1).getImageView());
+badgeView1.setBadgeCount(8);
+
+YBadgeView badgeView2 = new YBadgeView(this);
+badgeView2.setTargetView(tabbarLayout.getTabbarItemViews().get(2).getImageView());
+badgeView2.setBadgeCount(105);
+
+YBadgeView badgeView3 = new YBadgeView(this);
+badgeView3.setTargetView(tabbarLayout.getTabbarItemViews().get(3).getImageView());
+badgeView3.setBadgeText("NEW");
+```
