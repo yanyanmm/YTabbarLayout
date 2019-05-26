@@ -22,6 +22,7 @@ public class YTabbarItemView extends LinearLayout {
         this.setOrientation(VERTICAL);
         this.setGravity(Gravity.CENTER);
         this.setClickable(true);
+        this.setClipChildren(false);
 
         mImageView = new ImageView(context);
         mImageView.setLayoutParams(new LayoutParams(-2, -2));
