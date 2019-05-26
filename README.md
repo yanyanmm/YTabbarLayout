@@ -1,5 +1,5 @@
 # YTabbarLayout
-底部菜单导航
+底部菜单导航(tabbar+badge+fragment)
 
 
 ![Alt text](https://github.com/yanyanmm/YTabbarLayout/blob/master/shot/tabbar_shot1.png)
@@ -17,7 +17,7 @@ allprojects {
 ```
 # 2. 在build.gradle添加依赖
 ```Java
-implementation 'com.github.yanyanmm:YTabbarLayout:v1.0.2'
+implementation 'com.github.yanyanmm:YTabbarLayout:v1.1.0'
 ```
 # 3. 在xml中,加入以下代码:
 ```xml
@@ -58,7 +58,7 @@ tabbarLayout.setTabbarItems(tabbarItems, getSupportFragmentManager());
     </attr>
 </declare-styleable>
 ``` 
-# 6. BadgeView设置:
+# 6. YBadgeView设置:
 ```Java
 YBadgeView badgeView0 = new YBadgeView(this);
 badgeView0.setTargetView(tabbarLayout.getTabbarItemViews().get(0).getImageView());
