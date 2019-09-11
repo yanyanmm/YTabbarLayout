@@ -13,6 +13,7 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -30,8 +31,9 @@ public class YTabbarLayout extends LinearLayout {
 
     private OnTabbarItemClickListener mOnTabbarItemClickListener;
 
-    private FrameLayout mFragmentLayout;
+    private RelativeLayout mFragmentLayout;
     private LinearLayout mTabbarView;
+    private View mLineView;
 
     private FragmentManager mFragmentManager;
 
@@ -95,15 +97,15 @@ public class YTabbarLayout extends LinearLayout {
     }
 
     private void initViews() {
-        mFragmentLayout = new FrameLayout(mContext);
+        mFragmentLayout = new RelativeLayout(mContext);
         mFragmentLayout.setId(R.id.tabbar_fragment_container);
         mFragmentLayout.setLayoutParams(new LayoutParams(-1, -2, 1));
         this.addView(mFragmentLayout);
 
-        View lineView = new View(mContext);
-        lineView.setLayoutParams(new LayoutParams(-1, 1));
-        lineView.setBackgroundColor(Color.LTGRAY);
-        this.addView(lineView);
+        mLineView = new View(mContext);
+        mLineView.setLayoutParams(new LayoutParams(-1, YDesityUtil.dp2px(mContext, 0.25f)));
+        mLineView.setBackgroundColor(Color.LTGRAY);
+        this.addView(mLineView);
 
         mTabbarView = new LinearLayout(mContext);
         mTabbarView.setLayoutParams(new LayoutParams(-1, mTabbarHeight));
@@ -208,6 +210,14 @@ public class YTabbarLayout extends LinearLayout {
 
     public List<YTabbarItemView> getTabbarItemViews() {
         return mTabbarItemViews;
+    }
+
+    public LinearLayout getTabbarView() {
+        return mTabbarView;
+    }
+
+    public View getLineView() {
+        return mLineView;
     }
 
     public void setOnTabbarItemClickListener(OnTabbarItemClickListener listener) {
