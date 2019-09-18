@@ -47,12 +47,12 @@ public class YTabbarLayout extends LinearLayout {
         super(context, attrs, defStyleAttr);
         mContext = context.getApplicationContext();
         mTabbarCurrentIndex = 0;
-        mTabbarHeight = YDesityUtil.dp2px(mContext, 50);
+        mTabbarHeight = YDesityUtil.dp2px(context, 50);
         mTabbarBackgroundColor = Color.WHITE;
 
         mTabbarItemAttr = new YTabbarItemAttr();
-        mTabbarItemAttr.setTextSize(YDesityUtil.sp2px(mContext, 10));
-        mTabbarItemAttr.setTextMarginTop(YDesityUtil.dp2px(mContext, 3));
+        mTabbarItemAttr.setTextSize(YDesityUtil.sp2px(context, 10));
+        mTabbarItemAttr.setTextMarginTop(YDesityUtil.dp2px(context, 3));
 
         mTabbarItemViews = new ArrayList<YTabbarItemView>();
 
@@ -128,7 +128,7 @@ public class YTabbarLayout extends LinearLayout {
     }
 
     private void setTabbarItemSelected(int index, boolean selected) {
-        if (index < mTabbarItemViews.size()) {
+        if (index >= 0 && index < mTabbarItemViews.size()) {
             YTabbarItemView tabbarItemView = mTabbarItemViews.get(index);
             tabbarItemView.setSelected(selected);
 
@@ -146,7 +146,6 @@ public class YTabbarLayout extends LinearLayout {
                         transaction.hide(fragment).commit();
                     }
                 }
-
             }
         }
     }
@@ -154,15 +153,7 @@ public class YTabbarLayout extends LinearLayout {
     private View.OnClickListener mTabbarItemOnClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            int index = (int)v.getTag();
-            if (index != mTabbarCurrentIndex) {
-                setTabbarItemSelected(index, true);
-                setTabbarItemSelected(mTabbarCurrentIndex, false);
-                mTabbarCurrentIndex = index;
-                if (mOnTabbarItemClickListener != null) {
-                    mOnTabbarItemClickListener.onClickItem(v);
-                }
-            }
+            setTabbarItemSelected((int)v.getTag());
         }
     };
 
@@ -190,13 +181,30 @@ public class YTabbarLayout extends LinearLayout {
         mFragmentManager = fragmentManager;
 
         if (tabbarItems != null) {
+            mTabbarCurrentIndex = 0;
             for (int i = 0; i < tabbarItems.size(); i++) {
                 this.addTabberItem(tabbarItems.get(i));
             }
-            if (mTabbarCurrentIndex >= tabbarItems.size()) {
-                mTabbarCurrentIndex = 0;
-            }
             this.setTabbarItemSelected(mTabbarCurrentIndex, true);
+        }
+    }
+
+    /**
+     * 设置选中
+     * @param index
+     */
+    public void setTabbarItemSelected(int index) {
+        if (index != mTabbarCurrentIndex) {
+            setTabbarItemSelected(index, true);
+            setTabbarItemSelected(mTabbarCurrentIndex, false);
+            if (mOnTabbarItemClickListener != null) {
+                mOnTabbarItemClickListener.onItemChanged(mTabbarCurrentIndex, index);
+            }
+            mTabbarCurrentIndex = index;
+        } else {
+            if (mOnTabbarItemClickListener != null) {
+                mOnTabbarItemClickListener.onItemChanged(mTabbarCurrentIndex, index);
+            }
         }
     }
 
@@ -225,7 +233,7 @@ public class YTabbarLayout extends LinearLayout {
     }
 
     public interface OnTabbarItemClickListener {
-        void onClickItem(View v);
+        void onItemChanged(int formIndex, int toIndex);
         void onClickCenterItem(View v);
     }
 }

@@ -65,22 +65,27 @@ public class MainActivity extends AppCompatActivity {
 
         tabbarLayout.setOnTabbarItemClickListener(new YTabbarLayout.OnTabbarItemClickListener() {
             @Override
-            public void onClickItem(View v) {
-                int index = (int)v.getTag();
-                switch (index) {
-                    case 0: {
-                        badgeView0.hide(false);
-                    } break;
-                    case 1: {
-                        badgeView1.hide();
-                    } break;
-                    case 2: {
-                        badgeView2.hide();
-                    } break;
-                    case 3: {
-                        badgeView3.hide();
-                    } break;
-                    default:
+            public void onItemChanged(int fromIndex, int toIndex) {
+                if (fromIndex != toIndex) {
+                    switch (toIndex) {
+                        case 0: {
+                            badgeView0.hide(false);
+                        }
+                        break;
+                        case 1: {
+                            badgeView1.hide();
+                        }
+                        break;
+                        case 2: {
+                            badgeView2.hide();
+                        }
+                        break;
+                        case 3: {
+                            badgeView3.hide();
+                        }
+                        break;
+                        default:
+                    }
                 }
             }
 
